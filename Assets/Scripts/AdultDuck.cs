@@ -62,6 +62,26 @@ public abstract class AdultDuck : MonoBehaviour
         // unless of course this duck sees an enemy then that's how we control the state to attack?
     }
 
+    public void StartFollowing(GameObject target)
+    {
+        // remove the target to move towards
+        TargetToObject = target;
+        // update current state to following.
+        currentState = State.Following;
+        // make the duck not wander
+        wanderBehavior.enabled = false;
+    }
+
+    public void StartAttacking(GameObject target)
+    {
+        // remove the target to move towards
+        TargetToObject = target;
+        // update current state to following.
+        currentState = State.Attack;
+        // make the duck not wander
+        wanderBehavior.enabled = false;
+    }
+
     // Following player
     public void Following()
     {
