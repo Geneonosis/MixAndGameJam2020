@@ -8,14 +8,17 @@ public class Follower : MonoBehaviour
     public GameObject redDuck;
     public GameObject blueDuck;
     public GameObject greenDuck;
+    //public int numInTail;
 
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.GetComponent<FollowerDetectionArea>())
         {
             //found a leader to follow, so start following them!
-            GetComponent<NavMeshAgent>().SetDestination(other.gameObject.transform.position);
+            GetComponent<NavMeshAgent>().SetDestination(other.gameObject.GetComponent<FollowerDetectionArea>().GetRandomPointInCollider());
             GetComponent<RandomWander>().enabled = false;
+            //numInTail = other.gameObject.GetComponent<DuckTrail>().AddDuckling(this);
+
         }
         else if (other.gameObject.GetComponent<EnemySeekAndAttack>())
         {
@@ -30,8 +33,14 @@ public class Follower : MonoBehaviour
         {
             //No longer following leader, so start wandering around randomly again.
             GetComponent<RandomWander>().enabled = true;
+            //other.gameObject.GetComponent<DuckTrail>().RemoveDuckling();
         }
     }
+
+    //private void OnDestroy()
+    //{
+    //    FindObjectOfType<DuckTrail>()
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,8 +68,8 @@ public class Follower : MonoBehaviour
                     Debug.Log("did not find a valid item type on pick up");
                     break;
             }
-            GetComponent<NavMeshAgent>().SetDestination(other.gameObject.transform.position);
-            GetComponent<RandomWander>().enabled = false;
+            //GetComponent<NavMeshAgent>().SetDestination(other.gameObject.transform.position);
+            //GetComponent<RandomWander>().enabled = false;
         }
     }
 }
