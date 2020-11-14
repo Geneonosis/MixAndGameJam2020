@@ -9,3 +9,9 @@ public enum DUCKTYPES
     MAGE,
     ALL
 }
+
+public enum ENEMYTYPES
+{
+    GOOSE,
+    FOX
+}
