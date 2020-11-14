@@ -4,4 +4,14 @@
     {
         return;
     }
+
+    public void OnEnable()
+    {
+        FindObjectOfType<DuckManager>().numArtillery++;
+    }
+
+    public void OnDestroy()
+    {
+        FindObjectOfType<DuckManager>().numArtillery--;
+    }
 }
