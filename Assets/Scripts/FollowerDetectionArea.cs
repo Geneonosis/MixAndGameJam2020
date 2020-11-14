@@ -16,7 +16,7 @@ public class FollowerDetectionArea : MonoBehaviour
 
         if (point != ducklingFollowArea.ClosestPoint(point))
         {
-            Debug.Log("Out of the collider! Looking for other point...");
+            //Debug.Log("Out of the collider! Looking for other point...");
             point = GetRandomPointInCollider();
         }
 

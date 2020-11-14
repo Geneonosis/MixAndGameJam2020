@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class DuckManager : MonoBehaviour
 {
-    [NonSerialized]
+    //[NonSerialized]
     public int numArchers;
-    [NonSerialized]
+    //[NonSerialized]
     public int numArtillery;
-    [NonSerialized]
-    public int numWizards;
+    //[NonSerialized]
+    public int numMages;
 
     void Update()
     {
