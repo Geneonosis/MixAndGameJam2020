@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class FollowerDetectionArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Collider ducklingFollowArea;
 
-    // Update is called once per frame
-    void Update()
+    public Vector3 GetRandomPointInCollider()
     {
-        
+        var point = new Vector3(
+            Random.Range(ducklingFollowArea.bounds.min.x, ducklingFollowArea.bounds.max.x),
+            Random.Range(ducklingFollowArea.bounds.min.y, ducklingFollowArea.bounds.max.y),
+            Random.Range(ducklingFollowArea.bounds.min.z, ducklingFollowArea.bounds.max.z)
+        );
+
+        if (point != ducklingFollowArea.ClosestPoint(point))
+        {
+            Debug.Log("Out of the collider! Looking for other point...");
+            point = GetRandomPointInCollider();
+        }
+
+        return point;
     }
 }

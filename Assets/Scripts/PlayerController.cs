@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
     public float movementSpeed = 5;
+    
 
     public void Update()
     {
@@ -13,4 +14,6 @@ public class PlayerController : MonoBehaviour
 
         transform.position += (transform.forward * Input.GetAxis("Vertical")) * Time.deltaTime * movementSpeed;
     }
+
+
 }
