@@ -1071,14 +1071,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2057117605, guid: 1a6f2379c08d0d14788b05e30da5edd7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 11.599976
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057117605, guid: 1a6f2379c08d0d14788b05e30da5edd7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -41.950012
-      objectReference: {fileID: 0}
     - target: {fileID: 9121458760106348466, guid: 1a6f2379c08d0d14788b05e30da5edd7,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -11622,7 +11614,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duck
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 752394156005259111, guid: 09ee03ad29ae8ee4eb5cec7c0b65247a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 09ee03ad29ae8ee4eb5cec7c0b65247a, type: 3}
 --- !u!1001 &851093494690322984
 PrefabInstance:

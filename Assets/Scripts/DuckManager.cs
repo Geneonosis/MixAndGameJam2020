@@ -5,12 +5,18 @@ using UnityEngine;
 
 public class DuckManager : MonoBehaviour
 {
-    //[NonSerialized]
+    [NonSerialized]
     public int numArchers;
-    //[NonSerialized]
+    [NonSerialized]
     public int numArtillery;
-    //[NonSerialized]
+    [NonSerialized]
     public int numMages;
+    private CommandingUIScroller selection;
+
+    public void Start()
+    {
+        selection = FindObjectOfType<CommandingUIScroller>();
+    }
 
     void Update()
     {
@@ -25,18 +31,19 @@ public class DuckManager : MonoBehaviour
                 AdultDuck[] adultDucks = FindObjectsOfType<AdultDuck>();
                 foreach (AdultDuck duck in adultDucks)
                 {
-                    duck.SetDestination(hit.point);
+                    if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
+                        duck.SetDestination(hit.point);
                 }
             }
         }
 
         if (Input.GetMouseButtonDown(1)) //right click to make ducks follow the player
         {
-            //need to get the selected type first
             AdultDuck[] adultDucks = FindObjectsOfType<AdultDuck>();
             foreach (AdultDuck duck in adultDucks)
             {
-                duck.SetDestination(this.gameObject.transform.position);
+                if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
+                    duck.SetDestination(this.gameObject.transform.position);
             }
 
         }

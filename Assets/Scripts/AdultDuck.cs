@@ -7,6 +7,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(RandomWander))]
 public abstract class AdultDuck : MonoBehaviour
 {
+    public DUCKTYPES myType;
     private NavMeshAgent agent;
     private RandomWander wanderBehavior;
     public GameObject TargetToObject { get; private set; }

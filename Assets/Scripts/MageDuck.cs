@@ -5,8 +5,6 @@
         return;
     }
 
-
-
     public void OnEnable()
     {
         FindObjectOfType<DuckManager>().numMages++;

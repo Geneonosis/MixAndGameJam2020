@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b630476def692458a8cf36bedd6d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myType: 2
   range: 2
   currentState: 2
 --- !u!1001 &475412681958279314
