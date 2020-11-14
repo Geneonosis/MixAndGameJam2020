@@ -565,9 +565,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2057117604, guid: 1a6f2379c08d0d14788b05e30da5edd7, type: 3}
-      propertyPath: m_TagString
-      value: CommandingScroll
+    - target: {fileID: 1669376597, guid: 1a6f2379c08d0d14788b05e30da5edd7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.8199463
       objectReference: {fileID: 0}
     - target: {fileID: 9121458760106348466, guid: 1a6f2379c08d0d14788b05e30da5edd7,
         type: 3}

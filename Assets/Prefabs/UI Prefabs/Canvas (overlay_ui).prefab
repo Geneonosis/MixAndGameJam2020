@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.8200073, y: -12.119995}
+  m_AnchoredPosition: {x: 7.8199463, y: -12.119995}
   m_SizeDelta: {x: 8.896362, y: 18.503937}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1669376599
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 2057117606}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: CommandingScroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.311001}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 11.6, y: -41.95}
+  m_AnchoredPosition: {x: 11.599976, y: -41.950012}
   m_SizeDelta: {x: 115.97766, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2057117608
@@ -325,6 +325,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eb5f6e2757c821940b69cf1456f7865a, type: 3}
   - {fileID: 21300000, guid: 9866a92691696b346901281f2b329034, type: 3}
   - {fileID: 21300000, guid: 827c9cd4a3943534f909ac6473e17288, type: 3}
+  commandingIndex: 0
   rt: {fileID: 0}
 --- !u!1 &9121458761028598676
 GameObject:
