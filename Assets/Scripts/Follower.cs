@@ -17,6 +17,11 @@ public class Follower : MonoBehaviour
             GetComponent<NavMeshAgent>().SetDestination(other.gameObject.transform.position);
             GetComponent<RandomWander>().enabled = false;
         }
+        else if (other.gameObject.GetComponent<EnemySeekAndAttack>())
+        {
+            Debug.Log("ouch! duckling got hit!");
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)

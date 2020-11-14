@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4521727972096224227, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
         type: 3}
       propertyPath: m_Name
-      value: DuckRed
+      value: DuckRed Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4521727972096224229, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
         type: 3}
@@ -72,5 +72,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8054c380e55478e4d8e2119e0c785d47, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4521727972096224226, guid: cab2f0ab1e9ac894cbb7157dcb3466ee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cab2f0ab1e9ac894cbb7157dcb3466ee, type: 3}
