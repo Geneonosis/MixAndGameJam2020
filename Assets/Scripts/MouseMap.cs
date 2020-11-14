@@ -6,11 +6,19 @@ public class MouseMap : MonoBehaviour
 {
 
     public GameObject placeholder = null;
+
+    private GameObject[] markers;
     public GameObject lastMarker = null;
+
+    public Material [] ringTypes;
+    public Material[] arrowTypes;
+
+    public int ringIndex;
+
 
     private void Start()
     {
-        
+        this.markers = new GameObject[4];
     }
 
     /// <summary>
@@ -18,14 +26,24 @@ public class MouseMap : MonoBehaviour
     /// </summary>
     private void RenderPlaceholder()
     {
-        if (lastMarker)
+        this.ringIndex = GameObject.FindGameObjectWithTag("CommandingScroll").GetComponent<CommandingUIScroller>().commandingIndex;
+        if (this.markers[this.ringIndex] && this.ringIndex != 3)
         {
-            Destroy(lastMarker);
+            Destroy(this.markers[this.ringIndex]);
+            this.markers[this.ringIndex] = null;
+        }else if(this.ringIndex == 3)
+        {
+            foreach(GameObject marker in this.markers)
+            {
+                Destroy(marker);
+            }
         }
 
         GameObject ph = Instantiate(this.placeholder);
+        ph.GetComponent<Projector>().material = this.ringTypes[this.ringIndex];
+        ph.gameObject.GetComponentInChildren<MeshRenderer>().material = this.arrowTypes[this.ringIndex];
         ph.transform.position = TerrainToMousePosition();
-        this.lastMarker = ph;
+        this.markers[this.ringIndex] = ph;
     }
 
     private void Update()
@@ -39,6 +57,14 @@ public class MouseMap : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = TerrainToMousePosition();
+        UpdatePointerType();
+
+    }
+
+    private void UpdatePointerType()
+    {
+        //this.ringIndex = GameObject.FindGameObjectWithTag("CommandingScroll").GetComponent<CommandingUIScroller>().commandingIndex;
+        //this.gameObject.GetComponent<Projector>().material = this.ringTypes[this.ringIndex];
 
     }
 

@@ -11,6 +11,7 @@ public class CommandingUIScroller : MonoBehaviour
     public DUCKTYPES commandingDuck = DUCKTYPES.ALL;
 
     public Sprite [] DuckSprites;
+    public int commandingIndex = 0;
 
     private bool duckMoveLock = true;
     public RectTransform rt = null;
@@ -86,7 +87,8 @@ public class CommandingUIScroller : MonoBehaviour
         }
         Debug.Log(this.commandingDuck);
 
-        this.gameObject.GetComponentInChildren<Image>().sprite = this.DuckSprites[(int)this.commandingDuck];
+        this.commandingIndex = (int)this.commandingDuck;
+        this.gameObject.GetComponentInChildren<Image>().sprite = this.DuckSprites[this.commandingIndex];
                 
     }
 }

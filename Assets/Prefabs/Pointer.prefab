@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2479466123298144524}
   - component: {fileID: 1004778747}
   m_Layer: 2
-  m_Name: Sphere
+  m_Name: Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ Projector:
   m_AspectRatio: 1
   m_Orthographic: 1
   m_OrthographicSize: 1
-  m_Material: {fileID: 2100000, guid: ec7c773fa6a485640a0e2a16de9e4f42, type: 2}
+  m_Material: {fileID: 2100000, guid: 536da72e9c14e004994019a8cfb02556, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 0
