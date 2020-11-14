@@ -26,13 +26,24 @@ public class DuckManager : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                //need to check if enemy was clicked
-
                 AdultDuck[] adultDucks = FindObjectsOfType<AdultDuck>();
-                foreach (AdultDuck duck in adultDucks)
+                //need to check if enemy was clicked
+                if (hit.transform.tag == "Enemy")
                 {
-                    if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
-                        duck.SetDestination(hit.point);
+                    foreach (AdultDuck duck in adultDucks)
+                    {
+                        if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
+                            duck.StartAttacking(hit.transform.gameObject);
+                    }
+                }
+                else
+                { 
+                    foreach (AdultDuck duck in adultDucks)
+                    {
+                        if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
+                            duck.SetDestination(hit.point);
+                    }
+
                 }
             }
         }
@@ -43,7 +54,7 @@ public class DuckManager : MonoBehaviour
             foreach (AdultDuck duck in adultDucks)
             {
                 if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
-                    duck.SetDestination(this.gameObject.transform.position);
+                    duck.StartFollowing(this.gameObject);
             }
 
         }
