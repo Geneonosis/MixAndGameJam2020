@@ -531,26 +531,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9121458760265348424, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458760265348424, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.6883502
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458760265348424, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458760265348426, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Name
-      value: Duck_Type2
-      objectReference: {fileID: 0}
     - target: {fileID: 9121458760495717259, guid: 1a6f2379c08d0d14788b05e30da5edd7,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -690,31 +670,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458761130179165, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.7169812
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458761130179165, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.32805273
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458761130179165, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.70398223
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458761130179167, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Name
-      value: Duck_Type3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121458761306111407, guid: 1a6f2379c08d0d14788b05e30da5edd7,
-        type: 3}
-      propertyPath: m_Name
-      value: Duck_Type1
       objectReference: {fileID: 0}
     - target: {fileID: 9121458761485909312, guid: 1a6f2379c08d0d14788b05e30da5edd7,
         type: 3}
