@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class RandomWander : MonoBehaviour
 {
     public float wanderRadius;
-    public float wanderTimer;
+    public float wanderMinTime;
+    public float wanderMaxTime;
 
     private Transform target;
     private NavMeshAgent agent;
@@ -16,7 +17,7 @@ public class RandomWander : MonoBehaviour
     void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
-        timer = wanderTimer;
+        timer = wanderMaxTime;
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class RandomWander : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= wanderTimer)
+        if (timer >= Random.Range(wanderMinTime, wanderMaxTime) )
         {
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             agent.SetDestination(newPos);
