@@ -9,7 +9,6 @@ public class CommandingUIScroller : MonoBehaviour
     int counter = 0;
 
     public DUCKTYPES commandingDuck = DUCKTYPES.ALL;
-    //public Sprite commandingDuckSprite = null;
 
     public Sprite [] DuckSprites;
 
@@ -75,7 +74,7 @@ public class CommandingUIScroller : MonoBehaviour
                 this.commandingDuck = DUCKTYPES.ARCHER;
                 break;
             case 2:
-                this.commandingDuck = DUCKTYPES.GUNNER;
+                this.commandingDuck = DUCKTYPES.ARTILLERY;
                 break;
             case 3:
                 this.commandingDuck = DUCKTYPES.MAGE;

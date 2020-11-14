@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public enum DUCKTYPES
 {
     ARCHER,
-    GUNNER,
+    ARTILLERY,
     MAGE,
     ALL
 }

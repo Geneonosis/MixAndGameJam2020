@@ -64,7 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8cddd48b6ca7304ea94f196833626fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeholder: {fileID: 0}
+  placeholder: {fileID: 2479466123298144527, guid: f6d3abeaff3375b49b668ad0b4f0ad36,
+    type: 3}
   lastMarker: {fileID: 0}
 --- !u!111 &7553946341369003716
 Animation:
