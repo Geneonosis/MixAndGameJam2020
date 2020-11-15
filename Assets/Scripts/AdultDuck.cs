@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(RandomWander))]
 public abstract class AdultDuck : MonoBehaviour
@@ -37,6 +36,8 @@ public abstract class AdultDuck : MonoBehaviour
 
     [Range(0.01f, 10f)]
     public float range = 2f;
+    [Range(0.01f, 10f)]
+    public float fireRate = 0.5f;
 
     public bool debugMode = false;
     
@@ -51,7 +52,7 @@ public abstract class AdultDuck : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         wanderBehavior = GetComponent<RandomWander>();
@@ -86,10 +87,14 @@ public abstract class AdultDuck : MonoBehaviour
         wanderBehavior.enabled = false;
     }
 
+    /// <summary>
+    /// Begin attacking the selected target.
+    /// </summary>
+    /// <param name="target"></param>
     public void StartAttacking(GameObject target)
     {
         // remove the target to move towards
-        TargetToObject = target;
+        Enemy = target;
         // update current state to following.
         currentState = State.Attack;
         // make the duck not wander
@@ -149,6 +154,7 @@ public abstract class AdultDuck : MonoBehaviour
     {
         // remove the target to move towards
         TargetToObject = null;
+        Enemy = null;
         // update current state to idle.
         currentState = State.Idle;
         // make the agent stop.
