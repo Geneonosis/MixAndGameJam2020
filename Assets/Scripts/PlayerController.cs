@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
 
         Instantiate(myExplosion,transform.position,Quaternion.identity);
+        GameObject.FindGameObjectWithTag("EndScreen").GetComponent<Animation>().Play();
         //this.gameObject.GetComponentInChildren<Camera>().transform.parent = null;
     }
 
