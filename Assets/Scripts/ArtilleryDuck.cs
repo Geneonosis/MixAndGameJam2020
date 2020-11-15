@@ -24,9 +24,11 @@ public class ArtilleryDuck : AdultDuck
 
             if( Vector3.Distance(Enemy.transform.position, transform.position) < range)
             {
+                Debug.Log("en in range to attack");
                 _t += Time.deltaTime / fireRate;
                 if (_t > 1)
                 {
+                    Debug.Log("attack en");
                     _t = 0;
                     ShootProjectile();
                 }
@@ -61,6 +63,8 @@ public class ArtilleryDuck : AdultDuck
     {
         if (FindObjectOfType<DuckManager>() is DuckManager dm)
             dm.numArtillery++;
+        range = 5;
+        fireRate = 5;
     }
 
     public void OnDestroy()
