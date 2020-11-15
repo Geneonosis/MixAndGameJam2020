@@ -66,7 +66,7 @@ public abstract class AdultDuck : MonoBehaviour
         switch (currentState)
         {
             case State.Idle: Idle(); break;
-            //case State.MoveTowards: MoveTowards(); break;
+            case State.MoveTowards: MoveTowards(); break;
             case State.Following: Following(); break;
             case State.Attack: Attack(); break;
         }
@@ -75,11 +75,15 @@ public abstract class AdultDuck : MonoBehaviour
     }
 
     // Goto position (set by user)
-    //public void MoveTowards()
-    //{
-        // basically do nothing since we're moving the navmesh agent already. 
-        // unless of course this duck sees an enemy then that's how we control the state to attack?
-    //}
+    public void MoveTowards()
+    {
+        //basically do nothing since we're moving the navmesh agent already. 
+        //unless of course this duck sees an enemy then that's how we control the state to attack?
+        if (Vector3.Distance(this.TargetVector3.transform.position, this.transform.position) < 1)
+            StartIdle();
+        else
+            ; //continue moving
+    }
 
     public void StartFollowing(GameObject target)
     {

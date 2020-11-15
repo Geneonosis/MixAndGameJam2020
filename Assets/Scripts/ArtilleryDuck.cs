@@ -42,7 +42,7 @@ public class ArtilleryDuck : AdultDuck
         }
         else
         {
-            Debug.Log("art went back to idle");
+            //Debug.Log("art went back to idle");
             this.StartIdle();
         }
     }
