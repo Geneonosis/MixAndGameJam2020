@@ -42,11 +42,13 @@ public class ArcheryDuck : AdultDuck
 
     public void OnEnable()
     { 
-        FindObjectOfType<DuckManager>().numArchers++;
+        if( FindObjectOfType<DuckManager>() is DuckManager dm )
+            dm.numArchers++;
     }
 
     public void OnDestroy()
     {
-        FindObjectOfType<DuckManager>().numArchers--;
+        if( FindObjectOfType<DuckManager>() is DuckManager dm )
+            dm.numArchers--;
     }
 }

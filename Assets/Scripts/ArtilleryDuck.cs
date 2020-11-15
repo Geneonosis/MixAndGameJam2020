@@ -7,11 +7,13 @@
 
     public void OnEnable()
     {
-        FindObjectOfType<DuckManager>().numArtillery++;
+        if (FindObjectOfType<DuckManager>() is DuckManager dm)
+            dm.numArtillery++;
     }
 
     public void OnDestroy()
     {
-        FindObjectOfType<DuckManager>().numArtillery--;
+        if (FindObjectOfType<DuckManager>() is DuckManager dm)
+            dm.numArtillery--;
     }
 }
