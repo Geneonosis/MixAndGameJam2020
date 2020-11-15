@@ -13,7 +13,7 @@ public class EnemySeekAndAttack : MonoBehaviour
 
     private float _t = 0;
     public GameObject target;
-    private float sightRange = 5;
+    private float sightRange = 11;
     public float attackRange = 1;
     private NavMeshAgent agent;
     public float fireRate = 1;

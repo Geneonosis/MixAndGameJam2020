@@ -53,7 +53,7 @@ public class MageDuck : AdultDuck
         if (FindObjectOfType<DuckManager>() is DuckManager dm)
             dm.numMages++;
 
-        this.range = 5;
+        this.range = 10;
         this.fireRate = 2;
     }
 
