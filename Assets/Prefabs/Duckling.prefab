@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4161495638641739915}
   - component: {fileID: 239588298}
   - component: {fileID: 2028165370396403577}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Duckling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1745645232754615305}
   - component: {fileID: 5669328654138817775}
   - component: {fileID: 8553556817597986152}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BeakCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
