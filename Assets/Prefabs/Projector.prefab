@@ -79,6 +79,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5943fc3b158666d4ea0844ce8c9ea2ff, type: 2}
   - {fileID: 2100000, guid: 7a74300962358724786c04f778fe9746, type: 2}
   ringIndex: 0
+  enemyObjectTransform: {fileID: 0}
 --- !u!111 &7553946341369003716
 Animation:
   m_ObjectHideFlags: 0

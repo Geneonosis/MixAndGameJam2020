@@ -43,6 +43,12 @@ public class MouseMap : MonoBehaviour
         ph.GetComponent<Projector>().material = this.ringTypes[this.ringIndex];
         ph.gameObject.GetComponentInChildren<MeshRenderer>().material = this.arrowTypes[this.ringIndex];
         ph.transform.position = TerrainToMousePosition();
+        if (this.enemyObjectTransform)
+        {
+            ph.transform.parent = this.enemyObjectTransform;
+            ph.transform.localPosition = Vector3.zero;
+            ph.gameObject.GetComponentInChildren<Transform>().localPosition = Vector3.up;
+        }
         this.markers[this.ringIndex] = ph;
     }
 
@@ -68,6 +74,8 @@ public class MouseMap : MonoBehaviour
 
     }
 
+    public Transform enemyObjectTransform;
+
     /// <summary>
     /// function for finding the mouse position in 3d space
     /// </summary>
@@ -78,6 +86,11 @@ public class MouseMap : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000))
         {
+            this.enemyObjectTransform = null;
+            if(hit.transform.tag == "Enemy")
+            {
+                this.enemyObjectTransform = hit.transform;
+            }
             return hit.point;
         }
 
