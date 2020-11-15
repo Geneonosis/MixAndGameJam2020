@@ -32,12 +32,12 @@ public class EnemySeekAndAttack : MonoBehaviour
             if (Vector3.Distance(this.target.transform.position, this.transform.position) < attackRange)
             {
                 this.transform.LookAt(target.transform.position);
-                this.agent.isStopped = true;
+                //this.agent.isStopped = true;
                 // begin attacking the target.
                 _t += Time.deltaTime / fireRate;
                 if (_t > 1)
                 {
-                    Debug.Log("enemy attacking target " + target.gameObject.name);
+                    //Debug.Log("enemy attacking target " + target.gameObject.name);
                     _t = 0;
                     target.GetComponent<Health>().TakeDamage(damageAmount);
                 }
@@ -45,8 +45,10 @@ public class EnemySeekAndAttack : MonoBehaviour
             }
             else //target not in attack range, move towards it
             {
-                Debug.Log("enemy moving towards target " + target.gameObject.name);
-                this.agent.SetDestination(target.transform.position);
+                //Debug.Log("enemy moving towards target " + target.gameObject.name);
+                //Vector3 newPos;
+                //newPos = new Vector3(target.transform.position.x, 0, target.transform.position.z);
+                agent.SetDestination(target.transform.position);
             }
         }
         else
@@ -61,7 +63,7 @@ public class EnemySeekAndAttack : MonoBehaviour
                     || hitCollider.gameObject.GetComponent<ArcheryDuck>()
                     || hitCollider.gameObject.GetComponent<PlayerController>())
                 { //set the target
-                    Debug.Log("enemy found target in sight range " + hitCollider.gameObject.name);
+                    //Debug.Log("enemy found target in sight range " + hitCollider.gameObject.name);
                     target = hitCollider.gameObject;
                     break;
                 }

@@ -42,7 +42,7 @@ public class ArcheryDuck : AdultDuck
         }
         else
         {
-            Debug.Log("arch went back to idle");
+            //Debug.Log("arch went back to idle");
             this.StartIdle();
         }
     }
