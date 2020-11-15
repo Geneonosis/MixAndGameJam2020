@@ -1,17 +1,12 @@
 fileFormatVersion: 2
-guid: ffef60cb02a565440b09a36f0ed1c644
+guid: 10c11501e3eff7c4694d61b9fb432e0e
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Idle
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: e8747fc354bb252409d8a6f261ce1515, type: 2}
+    second: DuckWalk
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -40,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: DuckWalk
       takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 120
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

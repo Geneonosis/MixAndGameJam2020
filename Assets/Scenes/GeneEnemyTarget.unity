@@ -7807,6 +7807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow_Regular
       objectReference: {fileID: 0}
+    - target: {fileID: 5655506483056400733, guid: d9cd0d9f930bf234692ff40d25eef533,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9cd0d9f930bf234692ff40d25eef533, type: 3}
 --- !u!1 &1503406661
