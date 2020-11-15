@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   currentState: 3
+  animator: {fileID: 388722517809641768}
   range: 2
   fireRate: 0.5
   debugMode: 0
@@ -119,6 +120,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 170693717, guid: cab2f0ab1e9ac894cbb7157dcb3466ee, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 475412681594814456, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2031221990641764045, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -238,6 +248,12 @@ GameObject:
 --- !u!4 &7642181378257359599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4521727972096224229, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 6110853471640795402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &388722517809641768 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5884825689531711522, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
     type: 3}
   m_PrefabInstance: {fileID: 6110853471640795402}
   m_PrefabAsset: {fileID: 0}
