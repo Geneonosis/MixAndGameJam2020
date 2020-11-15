@@ -3,8 +3,8 @@
 public class ArcheryDuck : AdultDuck
 {
     public GameObject arrows;
-    //public float fireRate = 0.5f;
     private float _t = 0;
+    public GameObject fireFrom;
 
     public override void Attack()
     {
@@ -22,6 +22,7 @@ public class ArcheryDuck : AdultDuck
                 //else
                 //{
                 Debug.Log("enemy in range for archer to atck");
+                this.transform.LookAt(Enemy.transform.position);
                 this.agent.isStopped = true;
                     // begin shooting the target.
                     _t += Time.deltaTime / fireRate;
@@ -29,7 +30,7 @@ public class ArcheryDuck : AdultDuck
                     {
                         Debug.Log("time for archer to attack");
                         _t = 0;
-                        Instantiate(arrows, transform.position, transform.rotation);
+                        Instantiate(arrows, fireFrom.transform.position, transform.rotation);
                     }
                 //}
                 // Stop the duck from moving towards the enemy. at least stop moving the player.
@@ -41,7 +42,8 @@ public class ArcheryDuck : AdultDuck
         }
         else
         {
-            this.currentState = State.Idle;
+            Debug.Log("arch went back to idle");
+            this.StartIdle();
         }
     }
 
@@ -51,7 +53,7 @@ public class ArcheryDuck : AdultDuck
             dm.numArchers++;
 
         this.range = 10;
-        this.fireRate = 3;
+        this.fireRate = 1;
     }
 
     public void OnDestroy()

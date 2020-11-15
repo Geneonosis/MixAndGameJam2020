@@ -87,6 +87,12 @@ public abstract class AdultDuck : MonoBehaviour
         wanderBehavior.enabled = false;
     }
 
+    public void StartIdle()
+    {
+        // update current state to following.
+        currentState = State.Idle;
+    }
+
     /// <summary>
     /// Begin attacking the selected target.
     /// </summary>
@@ -117,6 +123,23 @@ public abstract class AdultDuck : MonoBehaviour
         // basically do nothing, until we hear something from the player?
         if (!wanderBehavior.enabled)
             wanderBehavior.enabled = true;
+        ScanForEnemies();
+        agent.isStopped = false;
+    }
+
+    private void ScanForEnemies()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, this.range);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.GetComponent<EnemySeekAndAttack>())
+            {
+                Debug.Log("found enemy in range");
+                StartAttacking(hitCollider.gameObject);
+                break;
+            }
+            
+        }
     }
 
     // Attack target (set by user)

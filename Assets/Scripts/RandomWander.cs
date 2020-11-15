@@ -28,6 +28,7 @@ public class RandomWander : MonoBehaviour
         if (timer >= Random.Range(wanderMinTime, wanderMaxTime) )
         {
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+            newPos = new Vector3(newPos.x, 0, newPos.z);
             agent.SetDestination(newPos);
             timer = 0;
         }

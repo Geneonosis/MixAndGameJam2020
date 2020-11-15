@@ -11,8 +11,13 @@ public class Health : MonoBehaviour
     {
         healthLevel -= amount;
         if (healthLevel <= 0)
+        {
+            if(this.gameObject.tag == "Player")
+            {
+                this.gameObject.GetComponentInChildren<Camera>().transform.parent = null;
+            }
             Destroy(this.gameObject);
+        }
+            
     }
-
-
 }

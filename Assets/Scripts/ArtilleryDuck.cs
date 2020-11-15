@@ -2,69 +2,57 @@
 
 public class ArtilleryDuck : AdultDuck
 {
-    public GameObject bombPref;
-    public GameObject shootFrom;
+    public GameObject bomb;
     private float _t = 0;
-
-    private void Start()
-    {
-        if( bombPref == null)
-        {
-            Debug.LogError("This gameobject does not have Bomb prefab set! Disabling!");
-            this.enabled = false;
-        }
-    }
+    public GameObject fireFrom;
 
     public override void Attack()
     {
-        if (bombPref == null) return;
-
-        if (Enemy != null)
+        if (this.Enemy != null)
         {
-
-            if( Vector3.Distance(Enemy.transform.position, transform.position) < range)
+            // need the definition on how this player attacks? Ranges? etc? damages? arch visibility? etc.
+            if (Vector3.Distance(this.Enemy.transform.position, this.transform.position) < this.range)
             {
-                Debug.Log("en in range to attack");
+                //// do a line of sight to see if the enemy is in the range.
+                //RaycastHit hit;
+                //if (Physics.Linecast(this.transform.position, this.Enemy.transform.position, out hit))
+                //{
+                //    this.agent.isStopped = false;
+                //}
+                //else
+                //{
+                Debug.Log("enemy in art for mage to atck");
+                this.transform.LookAt(Enemy.transform.position);
+                this.agent.isStopped = true;
+                // begin shooting the target.
                 _t += Time.deltaTime / fireRate;
                 if (_t > 1)
                 {
-                    Debug.Log("attack en");
+                    Debug.Log("time for art to attack");
                     _t = 0;
-                    ShootProjectile();
+                    Instantiate(bomb, fireFrom.transform.position, transform.rotation);
                 }
+                //}
+                // Stop the duck from moving towards the enemy. at least stop moving the player.
             }
-            else
+            else //enemy not in range, go towards it
             {
-                agent.SetDestination(Enemy.transform.position);
+                this.agent.SetDestination(Enemy.transform.position);
             }
-            //agent.updateRotation = true;
-
-            // Get Angle in Radians
-            //float AngleRad = Mathf.Atan2(Enemy.transform.position.y - transform.position.y, Enemy.transform.position.x - transform.position.x);
-            //// Get Angle in Degrees
-            //float AngleDeg = (180 / Mathf.PI) * AngleRad;
-            //// Rotate Object
-            //this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
         }
         else
         {
-            currentState = State.Idle;
+            Debug.Log("art went back to idle");
+            this.StartIdle();
         }
-    }
-
-    private void ShootProjectile()
-    {
-        Vector3 pos = shootFrom?.transform.position ?? transform.position;
-        Quaternion rot = shootFrom?.transform.rotation ?? transform.rotation;
-        Instantiate(bombPref, pos, rot);
     }
 
     public void OnEnable()
     {
         if (FindObjectOfType<DuckManager>() is DuckManager dm)
             dm.numArtillery++;
-        range = 5;
-        fireRate = 5;
+        this.range = 10;
+        this.fireRate = 3;
     }
 
     public void OnDestroy()

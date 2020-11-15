@@ -85,7 +85,7 @@ public class CommandingUIScroller : MonoBehaviour
                 this.counter = 0;
                 break;
         }
-        Debug.Log(this.commandingDuck);
+        //Debug.Log(this.commandingDuck);
 
         this.commandingIndex = (int)this.commandingDuck;
         this.gameObject.GetComponentInChildren<Image>().sprite = this.DuckSprites[this.commandingIndex];
