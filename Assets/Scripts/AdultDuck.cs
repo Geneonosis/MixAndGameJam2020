@@ -8,14 +8,23 @@ using UnityEngine.AI;
 public abstract class AdultDuck : MonoBehaviour
 {
     public DUCKTYPES myType;
-    private NavMeshAgent agent;
+    internal NavMeshAgent agent;
     private RandomWander wanderBehavior;
+
+    //Enemy gameobject to target.
+    public GameObject Enemy { get; private set; }
+
+    // target object to go after.
     public GameObject TargetToObject { get; private set; }
     [Range(0.01f, 10f)]
     public float range = 2f;
+
+    public bool debugMode = false;
     
-    public void OnDrawGizmosSelected()
+    public void OnDrawGizmos()
     {
+        // if debug mode is enabled then show the gizmos
+        if (!debugMode) return;
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(this.transform.position, range);
     }
