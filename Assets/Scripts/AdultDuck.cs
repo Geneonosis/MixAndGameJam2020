@@ -16,6 +16,7 @@ public abstract class AdultDuck : MonoBehaviour
 
     // target object to go after.
     public GameObject TargetToObject { get; private set; }
+    private GameObject TargetVector3;
     [Range(0.01f, 10f)]
     public float range = 2f;
 
@@ -51,6 +52,7 @@ public abstract class AdultDuck : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         wanderBehavior = GetComponent<RandomWander>();
+        TargetVector3 = new GameObject();
     }
 
     private void Update()
@@ -112,19 +114,32 @@ public abstract class AdultDuck : MonoBehaviour
     // Attack target (set by user)
     public abstract void Attack();
 
+    [Obsolete("This script is obsolete please use MoveToTarget instead!")]
     public void SetDestination(Vector3 newPos)
     {
-        wanderBehavior.enabled = false;
-        this.currentState = State.MoveTowards;
-        agent.SetDestination(newPos);
+        MoveToTarget(newPos);
     }
 
-    // Have the duck start moving toward the target destination.
+    /// <summary>
+    /// Have the duck start moving toward the target destination using GameObject
+    /// </summary>
+    /// <param name="target"></param>
     public void MoveToTarget(GameObject target)
     {
-        this.TargetToObject = target;
+        wanderBehavior.enabled = false;
+        TargetToObject = target;
         currentState = State.MoveTowards;
-        SetDestination(target.transform.position);
+        agent.SetDestination(target.transform.position);
+    }
+
+    /// <summary>
+    /// Overload function to handle Vector3 instead of GameObject
+    /// </summary>
+    /// <param name="target"></param>
+    public void MoveToTarget(Vector3 target)
+    {
+        TargetVector3.transform.position = target;
+        MoveToTarget(TargetVector3);
     }
 
     public void RemoveTarget()
@@ -134,7 +149,7 @@ public abstract class AdultDuck : MonoBehaviour
         // update current state to idle.
         currentState = State.Idle;
         // make the agent stop.
-        SetDestination( transform.position );
+        MoveToTarget( transform.position );
         // make the duck wander?
         wanderBehavior.enabled = true;  
     }

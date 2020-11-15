@@ -41,7 +41,7 @@ public class DuckManager : MonoBehaviour
                     foreach (AdultDuck duck in adultDucks)
                     {
                         if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
-                            duck.SetDestination(hit.point);
+                            duck.MoveToTarget(hit.point);
                     }
 
                 }
