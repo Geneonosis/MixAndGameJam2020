@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7920121790288330381}
+  - {fileID: 5295290811084443519}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -147,8 +148,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myType: 1
-  range: 4.52
   currentState: 3
+  range: 4.52
+  fireRate: 0.5
+  debugMode: 0
+  bombPref: {fileID: 100000, guid: d1e8477c1d62b4eb2950689921e7ef58, type: 3}
+  shootFrom: {fileID: 5127158909542988422}
+--- !u!1 &5127158909542988422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5295290811084443519}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5295290811084443519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127158909542988422}
+  m_LocalRotation: {x: -0.28869954, y: -0, z: -0, w: 0.9574198}
+  m_LocalPosition: {x: 0, y: 0.801, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4060389731142787959}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -33.56, y: 0, z: 0}
 --- !u!1 &8638590954210472422
 GameObject:
   m_ObjectHideFlags: 0

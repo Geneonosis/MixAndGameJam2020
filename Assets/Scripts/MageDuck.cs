@@ -7,12 +7,15 @@
 
     public void OnEnable()
     {
-        FindObjectOfType<DuckManager>().numMages++;
+        if (FindObjectOfType<DuckManager>() is DuckManager dm)
+            dm.numMages++;
     }
 
     public void OnDestroy()
     {
-        if (FindObjectOfType<DuckManager>())
-            FindObjectOfType<DuckManager>().numMages--;
+
+        if (FindObjectOfType<DuckManager>() is DuckManager dm)
+            dm.numMages--;
+
     }
 }
