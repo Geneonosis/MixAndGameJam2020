@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 4060389731142787955}
   - component: {fileID: 4060389731142787958}
   - component: {fileID: 7504562656812946815}
+  - component: {fileID: -7077985783761924567}
   m_Layer: 0
   m_Name: ArtillleryBlue
   m_TagString: Duck
@@ -202,7 +203,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -249,6 +250,19 @@ MonoBehaviour:
   debugMode: 0
   bomb: {fileID: 135746, guid: aa64b9ae639024c5097e12b27ac1d84c, type: 3}
   fireFrom: {fileID: 368736102}
+--- !u!114 &-7077985783761924567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060389731142787953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26bd81ae12e41742a2cfb8234f14c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLevel: 6
 --- !u!1 &5127158909542988422
 GameObject:
   m_ObjectHideFlags: 0

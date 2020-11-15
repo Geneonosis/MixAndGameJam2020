@@ -28,15 +28,15 @@ public class Follower : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.GetComponent<FollowerDetectionArea>())
-        {
-            //No longer following leader, so start wandering around randomly again.
-            GetComponent<RandomWander>().enabled = true;
-            //other.gameObject.GetComponent<DuckTrail>().RemoveDuckling();
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.GetComponent<FollowerDetectionArea>())
+    //    {
+    //        //No longer following leader, so start wandering around randomly again.
+    //        GetComponent<RandomWander>().enabled = true;
+    //        //other.gameObject.GetComponent<DuckTrail>().RemoveDuckling();
+    //    }
+    //}
 
 
     private void Start()
