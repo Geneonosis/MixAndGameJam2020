@@ -10,6 +10,7 @@ TagManager:
   - Duck
   - EndScreen
   - EndCard
+  - Pause
   layers:
   - Default
   - TransparentFX

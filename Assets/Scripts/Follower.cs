@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Follower : MonoBehaviour
 {
+    private Animator animator;
     public GameObject redDuck;
     public GameObject blueDuck;
     public GameObject greenDuck;
@@ -35,6 +36,14 @@ public class Follower : MonoBehaviour
             GetComponent<RandomWander>().enabled = true;
             //other.gameObject.GetComponent<DuckTrail>().RemoveDuckling();
         }
+    }
+
+
+    private void Start()
+    {
+        animator = this.gameObject.GetComponentInChildren<Animator>();
+        animator.StopPlayback();
+        animator.Play("DucklingWalk", 0, Random.Range(0f, 1f));
     }
 
     //private void OnDestroy()
