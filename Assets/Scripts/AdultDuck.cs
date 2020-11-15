@@ -8,27 +8,6 @@ using UnityEngine.AI;
 public abstract class AdultDuck : MonoBehaviour
 {
     public DUCKTYPES myType;
-    internal NavMeshAgent agent;
-    private RandomWander wanderBehavior;
-
-    //Enemy gameobject to target.
-    public GameObject Enemy { get; private set; }
-
-    // target object to go after.
-    public GameObject TargetToObject { get; private set; }
-    private GameObject TargetVector3;
-    [Range(0.01f, 10f)]
-    public float range = 2f;
-
-    public bool debugMode = false;
-    
-    public void OnDrawGizmos()
-    {
-        // if debug mode is enabled then show the gizmos
-        if (!debugMode) return;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, range);
-    }
 
     /**
         Adult ducks should either be one of these state:
@@ -46,6 +25,30 @@ public abstract class AdultDuck : MonoBehaviour
     }
     public State currentState = State.Idle;
 
+    internal NavMeshAgent agent;
+    private RandomWander wanderBehavior;
+
+    //Enemy gameobject to target.
+    public GameObject Enemy { get; private set; }
+
+    // target object to go after.
+    public GameObject TargetToObject { get; private set; }
+    private GameObject TargetVector3;
+
+    [Range(0.01f, 10f)]
+    public float range = 2f;
+
+    public bool debugMode = false;
+    
+    public void OnDrawGizmos()
+    {
+        // if debug mode is enabled then show the gizmos
+        if (!debugMode) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, range);
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,18 +63,18 @@ public abstract class AdultDuck : MonoBehaviour
         switch (currentState)
         {
             case State.Idle: Idle(); break;
-            case State.MoveTowards: MoveTowards(); break;
+            //case State.MoveTowards: MoveTowards(); break;
             case State.Following: Following(); break;
             case State.Attack: Attack(); break;
         }
     }
 
     // Goto position (set by user)
-    public void MoveTowards()
-    {
+    //public void MoveTowards()
+    //{
         // basically do nothing since we're moving the navmesh agent already. 
         // unless of course this duck sees an enemy then that's how we control the state to attack?
-    }
+    //}
 
     public void StartFollowing(GameObject target)
     {
