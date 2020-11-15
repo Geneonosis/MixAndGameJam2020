@@ -15,6 +15,7 @@ namespace DigitalRuby.PyroParticles
     /// </summary>
     public class FireProjectileScript : FireBaseScript, ICollisionHandler
     {
+        public float damageAmount;
         [Tooltip("The collider object to use for collision and physics.")]
         public GameObject ProjectileColliderObject;
 
@@ -92,6 +93,9 @@ namespace DigitalRuby.PyroParticles
             {
                 ProjectileCollisionSound.Play();
             }
+
+            if (c.gameObject.GetComponent<Health>())
+                c.gameObject.GetComponent<Health>().TakeDamage(damageAmount);
 
             // if we have contacts, play the collision particle system and call the delegate
             if (c.contacts.Length != 0)

@@ -19,6 +19,8 @@ namespace DigitalRuby.PyroParticles
 
     public class FireBaseScript : MonoBehaviour
     {
+        //public float damageAmount;
+
         [Tooltip("Optional audio source to play once when the script starts.")]
         public AudioSource AudioSource;
 
@@ -158,12 +160,17 @@ namespace DigitalRuby.PyroParticles
             Collider[] objects = UnityEngine.Physics.OverlapSphere(pos, radius);
             foreach (Collider h in objects)
             {
+
+            if (h.gameObject.GetComponent<Health>())
+                h.gameObject.GetComponent<Health>().TakeDamage(20);
+
                 Rigidbody r = h.GetComponent<Rigidbody>();
                 if (r != null)
                 {
                     r.AddExplosionForce(force, pos, radius);
                 }
             }
+
         }
 
         public virtual void Stop()
