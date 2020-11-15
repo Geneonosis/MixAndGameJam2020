@@ -29,7 +29,7 @@ public class DuckManager : MonoBehaviour
                 AdultDuck[] adultDucks = FindObjectsOfType<AdultDuck>();
                 //need to check if enemy was clicked
                 if (hit.transform.tag == "Enemy")
-                {
+                {   
                     foreach (AdultDuck duck in adultDucks)
                     {
                         if (duck.myType == selection.commandingDuck || selection.commandingDuck == DUCKTYPES.ALL)
