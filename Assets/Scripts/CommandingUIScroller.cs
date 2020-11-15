@@ -27,19 +27,19 @@ public class CommandingUIScroller : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0f || Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!(counter >= 3))
-            {
-                counter++;
-                SetCommandingDuck(counter);
-            }
-            else
-            {
-                counter = -1;
-                counter++;
-                SetCommandingDuck(counter);
-            }
+                if (!(counter >= 3))
+                {
+                    counter++;
+                    SetCommandingDuck(counter);
+                }
+                else
+                {
+                    counter = -1;
+                    counter++;
+                    SetCommandingDuck(counter);
+                }
         }
 
         if(Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -69,16 +69,16 @@ public class CommandingUIScroller : MonoBehaviour
         switch (counter)
         {
             case 0:
-                this.commandingDuck = DUCKTYPES.ALL;
-                break;
-            case 1:
                 this.commandingDuck = DUCKTYPES.ARCHER;
                 break;
-            case 2:
+            case 1:
                 this.commandingDuck = DUCKTYPES.ARTILLERY;
                 break;
-            case 3:
+            case 2:
                 this.commandingDuck = DUCKTYPES.MAGE;
+                break;
+            case 3:
+                this.commandingDuck = DUCKTYPES.ALL;
                 break;
             default:
                 this.commandingDuck = DUCKTYPES.ALL;

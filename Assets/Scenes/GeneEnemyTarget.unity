@@ -11528,6 +11528,10 @@ PrefabInstance:
       propertyPath: ducklingFollowArea
       value: 
       objectReference: {fileID: 876054219}
+    - target: {fileID: 876054218, guid: 09ee03ad29ae8ee4eb5cec7c0b65247a, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 752394156005259110, guid: 09ee03ad29ae8ee4eb5cec7c0b65247a,
         type: 3}
       propertyPath: m_UseGravity
@@ -11537,6 +11541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856108138397843138, guid: 09ee03ad29ae8ee4eb5cec7c0b65247a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1856108138528403427, guid: 09ee03ad29ae8ee4eb5cec7c0b65247a,
         type: 3}
