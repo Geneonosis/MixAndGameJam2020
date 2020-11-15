@@ -114,6 +114,19 @@ MonoBehaviour:
   fireBall: {fileID: 7491850219537547124, guid: 2c3bf7a783e0d45428095c8a022db5ba,
     type: 3}
   fireFrom: {fileID: 170693713}
+--- !u!114 &4797334673796177097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4521727972096224227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26bd81ae12e41742a2cfb8234f14c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLevel: 0
 --- !u!1001 &475412681958279314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +134,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7077985783761924567, guid: b95726ec186aa024085c00752138aecd,
+        type: 3}
+      propertyPath: healthLevel
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 368736106, guid: b95726ec186aa024085c00752138aecd, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -138,7 +156,12 @@ PrefabInstance:
     - target: {fileID: 4060389731142787953, guid: b95726ec186aa024085c00752138aecd,
         type: 3}
       propertyPath: m_Name
-      value: DuckGreen Variant
+      value: MageGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060389731142787955, guid: b95726ec186aa024085c00752138aecd,
+        type: 3}
+      propertyPath: m_Speed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4060389731142787957, guid: b95726ec186aa024085c00752138aecd,
         type: 3}

@@ -93,6 +93,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3083777127953119182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642181378257359593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26bd81ae12e41742a2cfb8234f14c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLevel: 0
 --- !u!114 &78027304121155798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 4521727972096224227, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
         type: 3}
       propertyPath: m_Name
-      value: DuckRed Variant
+      value: ArcherRed
       objectReference: {fileID: 0}
     - target: {fileID: 4521727972096224227, guid: cab2f0ab1e9ac894cbb7157dcb3466ee,
         type: 3}
