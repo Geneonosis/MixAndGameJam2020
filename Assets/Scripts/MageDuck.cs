@@ -12,6 +12,7 @@
 
     public void OnDestroy()
     {
-        FindObjectOfType<DuckManager>().numMages--;
+        if (FindObjectOfType<DuckManager>())
+            FindObjectOfType<DuckManager>().numMages--;
     }
 }

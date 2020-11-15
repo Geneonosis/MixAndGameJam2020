@@ -47,6 +47,7 @@ public class ArcheryDuck : AdultDuck
 
     public void OnDestroy()
     {
-        FindObjectOfType<DuckManager>().numArchers--;
+        if (FindObjectOfType<DuckManager>())
+            FindObjectOfType<DuckManager>().numArchers--;
     }
 }

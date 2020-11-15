@@ -12,6 +12,7 @@
 
     public void OnDestroy()
     {
-        FindObjectOfType<DuckManager>().numArtillery--;
+        if (FindObjectOfType<DuckManager>())
+            FindObjectOfType<DuckManager>().numArtillery--;
     }
 }
