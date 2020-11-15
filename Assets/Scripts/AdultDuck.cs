@@ -27,6 +27,8 @@ public abstract class AdultDuck : MonoBehaviour
     internal NavMeshAgent agent;
     private RandomWander wanderBehavior;
 
+    public Animator animator;
+
     //Enemy gameobject to target.
     public GameObject Enemy { get; private set; }
 
@@ -68,6 +70,8 @@ public abstract class AdultDuck : MonoBehaviour
             case State.Following: Following(); break;
             case State.Attack: Attack(); break;
         }
+
+        this.animator.SetBool("isWalking", !this.agent.isStopped);
     }
 
     // Goto position (set by user)
