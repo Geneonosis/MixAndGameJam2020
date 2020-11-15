@@ -13,7 +13,7 @@ public class EnemySeekAndAttack : MonoBehaviour
 
     private float _t = 0;
     public GameObject target;
-    public float sightRange = 3;
+    private float sightRange = 5;
     public float attackRange = 1;
     private NavMeshAgent agent;
     public float fireRate = 1;
@@ -48,6 +48,7 @@ public class EnemySeekAndAttack : MonoBehaviour
                 //Debug.Log("enemy moving towards target " + target.gameObject.name);
                 //Vector3 newPos;
                 //newPos = new Vector3(target.transform.position.x, 0, target.transform.position.z);
+                this.agent.isStopped = false;
                 agent.SetDestination(target.transform.position);
             }
         }

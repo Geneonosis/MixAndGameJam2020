@@ -120,7 +120,10 @@ public abstract class AdultDuck : MonoBehaviour
     {
         // follow the target unless the target has been set to null.
         if (TargetToObject != null)
+        {
+            this.agent.isStopped = false;
             agent.SetDestination(TargetToObject.transform.position);
+        }
         else
             RemoveTarget();
     }
@@ -142,7 +145,7 @@ public abstract class AdultDuck : MonoBehaviour
         {
             if (hitCollider.gameObject.GetComponent<EnemySeekAndAttack>())
             {
-                Debug.Log("found enemy in range");
+                //Debug.Log("found enemy in range");
                 StartAttacking(hitCollider.gameObject);
                 break;
             }
@@ -168,6 +171,7 @@ public abstract class AdultDuck : MonoBehaviour
         wanderBehavior.enabled = false;
         TargetToObject = target;
         currentState = State.MoveTowards;
+        this.agent.isStopped = false;
         agent.SetDestination(target.transform.position);
     }
 

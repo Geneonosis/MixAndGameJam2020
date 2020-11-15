@@ -21,14 +21,14 @@ public class MageDuck : AdultDuck
                 //}
                 //else
                 //{
-                Debug.Log("enemy in range for mage to atck");
+                //Debug.Log("enemy in range for mage to atck");
                 this.transform.LookAt(Enemy.transform.position);
                 this.agent.isStopped = true;
                 // begin shooting the target.
                 _t += Time.deltaTime / fireRate;
                 if (_t > 1)
                 {
-                    Debug.Log("time for mage to attack");
+                    //Debug.Log("time for mage to attack");
                     _t = 0;
                     Instantiate(fireBall, fireFrom.transform.position, transform.rotation);
                 }
@@ -37,12 +37,13 @@ public class MageDuck : AdultDuck
             }
             else //enemy not in range, go towards it
             {
+                this.agent.isStopped = false;
                 this.agent.SetDestination(Enemy.transform.position);
             }
         }
         else
         {
-            Debug.Log("mage went back to idle");
+            //Debug.Log("mage went back to idle");
             this.StartIdle();
         }
     }

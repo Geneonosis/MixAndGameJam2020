@@ -29,6 +29,7 @@ public class RandomWander : MonoBehaviour
         {
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
             newPos = new Vector3(newPos.x, 0, newPos.z);
+            this.agent.isStopped = false;
             agent.SetDestination(newPos);
             timer = 0;
         }

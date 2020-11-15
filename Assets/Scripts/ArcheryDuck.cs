@@ -21,7 +21,7 @@ public class ArcheryDuck : AdultDuck
                 //}
                 //else
                 //{
-                Debug.Log("enemy in range for archer to atck");
+                //Debug.Log("enemy in range for archer to atck");
                 this.transform.LookAt(Enemy.transform.position);
                 this.agent.isStopped = true;
                     // begin shooting the target.

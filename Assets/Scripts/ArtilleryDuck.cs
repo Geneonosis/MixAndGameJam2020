@@ -37,6 +37,7 @@ public class ArtilleryDuck : AdultDuck
             }
             else //enemy not in range, go towards it
             {
+                this.agent.isStopped = false;
                 this.agent.SetDestination(Enemy.transform.position);
             }
         }
